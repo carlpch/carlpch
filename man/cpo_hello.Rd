@@ -21,4 +21,5 @@ there is still time to say hello.
 }
 \examples{
 1+1
+cpo_hello(10)
 }
