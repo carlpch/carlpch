@@ -1,13 +1,15 @@
 Package: carlpch
 Type: Package
-Title: What the Package Does (Title Case)
+Title: Different types of function
 Version: 0.1.0
 Author: Carl Pi-Cheng Huang
 Maintainer: Carl Pi-Cheng Huang <ph9xn@virginia.edu>
 Description: This is a test.
-License: What license is it under?
 Encoding: UTF-8
 LazyData: true
 Imports: 
     dplyr
 RoxygenNote: 6.1.1
+Suggests: 
+    testthat
+License: GPL-2
