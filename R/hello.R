@@ -22,8 +22,8 @@
 #' there is still time to say hello.
 #' @return You give anything to the function (including nothing) Then, you receive a "Hello" from the function.
 #' @examples
-#' hello()
-#' hello('6 CPO Cars!')
+#' cpo_hello()
+#' cpo_hello('6 CPO Cars!')
 cpo_hello <- function() {
   print("Hello, world of 6 CPO cars!")
 }
