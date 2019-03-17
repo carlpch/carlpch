@@ -2,10 +2,12 @@ Package: carlpch
 Type: Package
 Title: What the Package Does (Title Case)
 Version: 0.1.0
-Author: Who wrote it
-Maintainer: The package maintainer <yourself@somewhere.net>
-Description: More about what it does (maybe more than one line)
-    Use four spaces when indenting paragraphs within the Description.
+Author: Carl Pi-Cheng Huang
+Maintainer: Carl Pi-Cheng Huang <ph9xn@virginia.edu>
+Description: This is a test.
 License: What license is it under?
 Encoding: UTF-8
 LazyData: true
+Imports: 
+    dplyr
+RoxygenNote: 6.1.1
