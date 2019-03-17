@@ -24,6 +24,8 @@
 #' @return You give anything to the function (including nothing) Then, you receive a "Hello" from the function.
 #' @examples
 #' 1+1
+#' cpo_hello(10)
+#' @export
 
 cpo_hello <- function(x) {
   x = "Hello, world of 6 CPO cars!"
