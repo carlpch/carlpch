@@ -1,3 +1,6 @@
+globalVariables(".")
+# see here https://github.com/tidyverse/magrittr/issues/29#issuecomment-74313262
+
 #' Replace all x in a tibble with y
 #'
 #' While the \code{dplyr} grammar provides great functionality to
@@ -7,6 +10,8 @@
 #' @param replacement  The value that will be used to replace the \code{target}.
 #' @return This function will return a \code{tibble} with all the \code{x} replaced by \code{y}.
 #' @examples
+#' library(tibble)
+#' library(dplyr)
 #' data = tibble(a=1:10, b=11:20, c='Test')
 #' replace_all(table = data,target='Test',replacement=100)
 #'
@@ -16,9 +21,9 @@
 
 replace_all <- function(table,target,replacement) {
   if (is.na(target)==TRUE){
-    table = mutate_all(table, funs(ifelse(is.na(.),replacement,.)))
+    table = dplyr::mutate_all(table, dplyr::funs(ifelse(is.na(.),replacement,.)))
   } else {
-    table = mutate_all(table, funs(ifelse(.==target,replacement,.)))
+    table = dplyr::mutate_all(table, dplyr::funs(ifelse(.==target,replacement,.)))
   }
   return(table)
 }
