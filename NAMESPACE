@@ -2,3 +2,4 @@
 
 export(cpo_hello)
 export(replace_all)
+export(rownonmiss)

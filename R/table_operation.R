@@ -21,10 +21,27 @@ globalVariables(".")
 
 replace_all <- function(table,target,replacement) {
   if (is.na(target)==TRUE){
-    table = dplyr::mutate_all(table, dplyr::funs(ifelse(is.na(.),replacement,.)))
+    table <- dplyr::mutate_all(table, dplyr::funs(ifelse(is.na(.),replacement,.)))
   } else {
-    table = dplyr::mutate_all(table, dplyr::funs(ifelse(.==target,replacement,.)))
+    table <- dplyr::mutate_all(table, dplyr::funs(ifelse(.==target,replacement,.)))
   }
   return(table)
 }
 
+#' Counting the number of non-missing cells within a row
+#'
+#' Inspired by \code{STATA}'s \code{rownonmiss} function.
+#' @param table    Takes a dataframe or tibble.
+#' @return This function will return a vector with the count of all the non-missing cells in each row.
+#' @examples
+#' library(tibble)
+#' library(dplyr)
+#' data = tibble(a=c(NA,NA,1:3), b=rep(NA,5), c=c(100:97,NA))
+#' rownonmiss(data)
+#'
+#' @export
+
+rownonmiss <- function(table){
+  table <- dplyr::mutate_all(table, dplyr::funs(ifelse(is.na(.),0,1)))
+  return(rowSums(table))
+}
